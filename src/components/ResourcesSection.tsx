@@ -2,12 +2,12 @@ import { Box, Button, Grid, HStack, Text } from "@chakra-ui/react"
 import { resourceCards, type ResourceCardData } from "./data"
 
 function ResourceCard({ label, value, accent, icon }: ResourceCardData) {
+  const Icon = icon
+
   return (
     <Box bg="#16202a" borderRadius="lg" p={3} border="1px solid" borderColor={`${accent}66`}>
       <HStack mb={2} gap={2}>
-        <Text color={accent} fontSize="lg" lineHeight={1}>
-          {icon}
-        </Text>
+        <Icon size={18} color={accent} />
         <Text fontSize="10px" color={accent} textTransform="uppercase" fontWeight="700" letterSpacing="0.08em">
           {label}
         </Text>

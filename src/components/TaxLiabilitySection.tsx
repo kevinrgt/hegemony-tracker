@@ -1,4 +1,5 @@
 import { Box, Button, Flex, Grid, HStack, Text, VStack } from "@chakra-ui/react"
+import { Gavel } from "lucide-react"
 
 export default function TaxLiabilitySection() {
   return (
@@ -7,9 +8,7 @@ export default function TaxLiabilitySection() {
         <Text fontSize="xs" color="#c83232" textTransform="uppercase" letterSpacing="0.2em" fontWeight="900">
           Tax Liability
         </Text>
-        <Text color="#c83232" fontWeight="700">
-          gavel
-        </Text>
+        <Gavel size={16} color="#c83232" />
       </Flex>
 
       <VStack align="stretch" gap={4} p={4}>

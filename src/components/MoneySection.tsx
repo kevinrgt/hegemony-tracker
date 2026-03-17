@@ -1,10 +1,11 @@
 import { Button, VStack } from "@chakra-ui/react"
+import { Landmark, Wallet } from "lucide-react"
 import MoneyCard from "./MoneyCard"
 
 export default function MoneySection() {
   return (
     <VStack gap={4} align="stretch">
-      <MoneyCard title="Revenue" value="$142" icon="wallet" accentColor="#0d7ff2" activeButtons />
+      <MoneyCard title="Revenue" value="$142" icon={Wallet} accentColor="#0d7ff2" activeButtons />
 
       <Button
         h="56px"
@@ -19,7 +20,7 @@ export default function MoneySection() {
         Transfer Revenue To Capital
       </Button>
 
-      <MoneyCard title="Capital" value="$580" icon="bank" accentColor="#94a3b8" />
+      <MoneyCard title="Capital" value="$580" icon={Landmark} accentColor="#94a3b8" />
     </VStack>
   )
 }
