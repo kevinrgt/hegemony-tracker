@@ -1,4 +1,5 @@
-import { Button, Flex, Text } from "@chakra-ui/react"
+import { Button, Flex, Input } from "@chakra-ui/react"
+import { useEffect, useState } from "react"
 
 type MoneyInputProps = {
   active?: boolean
@@ -6,6 +7,12 @@ type MoneyInputProps = {
 }
 
 export default function MoneyInput({ active, value = 142 }: MoneyInputProps) {
+  const [inputValue, setInputValue] = useState(String(value))
+
+  useEffect(() => {
+    setInputValue(String(value))
+  }, [value])
+
   return (
     <Flex
       align="center"
@@ -32,17 +39,27 @@ export default function MoneyInput({ active, value = 142 }: MoneyInputProps) {
         -
       </Button>
 
-      <Text
-        flex="1"
+      <Input
         textAlign="center"
         fontSize="1.125rem"
         lineHeight="1.75rem"
         letterSpacing="0.02em"
+        w="4rem"
         fontWeight="900"
         color="#dbe8f8"
-      >
-        {value}
-      </Text>
+        value={inputValue}
+        inputMode="numeric"
+        pattern="[0-9]*"
+        onChange={(event) => {
+          const numericOnly = event.target.value.replace(/\D/g, "")
+          setInputValue(numericOnly)
+        }}
+        px={0}
+        bg="transparent"
+        border="none"
+        _focus={{ boxShadow: "none" }}
+        _focusVisible={{ outline: "none", boxShadow: "none" }}
+      />
 
       <Button
         size="md"
