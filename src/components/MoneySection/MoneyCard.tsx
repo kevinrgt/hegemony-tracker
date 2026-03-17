@@ -1,16 +1,15 @@
-import { Box, Flex, Text } from "@chakra-ui/react"
+import { Box, Flex, HStack, Text } from "@chakra-ui/react"
 import { type LucideIcon } from "lucide-react"
-import MoneyButtons from "./MoneyButtons"
+import MoneyInput from "./MoneyInput"
 
 type MoneyCardProps = {
   title: string
   value: string
   icon: LucideIcon
   accentColor: string
-  activeButtons?: boolean
 }
 
-export default function MoneyCard({ title, value, icon, accentColor, activeButtons }: MoneyCardProps) {
+export default function MoneyCard({ title, value, icon, accentColor }: MoneyCardProps) {
   const Icon = icon
 
   return (
@@ -21,10 +20,13 @@ export default function MoneyCard({ title, value, icon, accentColor, activeButto
         </Text>
         <Icon size={18} color={accentColor} style={{ opacity: 0.8 }} />
       </Flex>
-      <Text fontSize="5xl" fontWeight="900" textAlign="center" py={4}>
+
+    <HStack> 
+      <Text fontSize="2.25rem" lineHeight="2.5rem" fontWeight="900" textAlign="center" py={4}>
         {value}
       </Text>
-      <MoneyButtons active={activeButtons} />
+      <MoneyInput value={value} />
+      </HStack>
     </Box>
   )
 }

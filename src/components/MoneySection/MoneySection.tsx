@@ -5,7 +5,7 @@ import MoneyCard from "./MoneyCard"
 export default function MoneySection() {
   return (
     <VStack gap={4} align="stretch">
-      <MoneyCard title="Revenue" value="$142" icon={Wallet} accentColor="#0d7ff2" activeButtons />
+      <MoneyCard title="Revenue" value="$142" icon={Wallet} accentColor="#0d7ff2" />
 
       <Button
         h="56px"

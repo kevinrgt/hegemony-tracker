@@ -1,7 +1,7 @@
 import { Box, VStack } from "@chakra-ui/react"
 import BottomNav from "./BottomNav"
 import CompaniesSection from "./CompaniesSection"
-import MoneySection from "./MoneySection"
+import MoneySection from "./MoneySection/MoneySection"
 import ResourcesSection from "./ResourcesSection"
 import TaxLiabilitySection from "./TaxLiabilitySection"
 import TopHeader from "./TopHeader"
